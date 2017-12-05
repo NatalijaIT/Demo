@@ -1,5 +1,5 @@
 module.exports = function (app) {
-    var Images = require('../controllers/controllers');
+    var Image = require('../controllers/controllers');
 
     app.use(function(req, res, next) {
         res.header("Access-Control-Allow-Origin", "*");
@@ -9,11 +9,11 @@ module.exports = function (app) {
     });
 
     app.route('/')
-        .get(Images.getIndex);
+        .get(Image.getIndex);
     app.route('/api')
-        .get(Images.getIndex);
+        .get(Image.getIndex);
 
     app.route('/images')
-        .get(Images.getImages)
-        .post(Images.addImages);
+        .get(Image.getImage)
+        .post(Image.addImage);
 };

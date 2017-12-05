@@ -1,15 +1,15 @@
 var mongoose = require('mongoose');
 
-var ImagesSchema = mongoose.Schema({
+var ImageSchema = mongoose.Schema({
     image: String
 });
 
-var Images = module.exports = mongoose.model('Images', ImagesSchema);
+var Image = module.exports = mongoose.model('Image', ImageSchema);
 
-module.exports.getImages = (cb) => {
-    Images.find(cb);
+module.exports.getImage = (cb) => {
+    Image.find(cb);
 };
 
-module.exports.addImages = (row, cb) => {
-    Images.create(row, cb);
+module.exports.addImage = (row, cb) => {
+    Image.create(row, cb);
 };
