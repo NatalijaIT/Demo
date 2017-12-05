@@ -1,6 +1,6 @@
 
 var mongoose = require('mongoose'),
-    Slide = require('../models/slides');
+Slide = require('../models/slides');
 
 exports.getIndex = (req, res) => {
     res.send('Please use /slides');

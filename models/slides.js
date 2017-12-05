@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var slideSchema = mongoose.Schema({
+var SlideSchema = mongoose.Schema({
     image: String
 });
 
