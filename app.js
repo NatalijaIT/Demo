@@ -1,22 +1,19 @@
 var express = require('express');
-var cors = require('cors');
+var app = express();
 var bodyParser = require('body-parser');
 var http = require("http");
-var app = express();
+var mongoose = require('mongoose');
+var port = process.env.PORT || 3000;
 
-var users = require('./routes/users');
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(cors());
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('app/public'));
-app.use(require('./routes/users'));
+app.use(bodyParser.json());
 
-app.set('port', process.env.PORT || 3000);
+var promise = mongoose.connect('mongodb://Natalia:122448@ds135069.mlab.com:35069/slides', {
+    useMongoClient: true
+});
 
-app.use('/users', users);
+var routes = require('./routes/users');
+routes(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -36,12 +33,6 @@ app.use(function(err, req, res, next) {
     res.render('error');
 });
 
-app.get('/', function(req, res) {
-    res.send(www);
-})
-
-var server = app.listen(app.get('port'), function() {
-    console.log('Listening on port ' + app.get('port'));
+app.listen(port, () => {
+    console.log('Listening on port ' + port);
 });
-
-module.exports = app;

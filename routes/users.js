@@ -1,63 +1,19 @@
-var express = require('express');
-var router = express.Router();
-var fs = require('fs');
-var content = fs.readFileSync('./eneida.json', "utf8");
-var items = JSON.parse(content);
+module.exports = function (app) {
+    var Slides = require('../controllers/controllers');
 
-
-router.get('/', function(req, res) {
-    return res.json({
-        images: items
+    app.use(function(req, res, next) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        next();
     });
-});
 
-router.post('/', function(req, res) {
-    if (!req.body) {
-        return res.json;
-    }
-    console.log(req.body);
-    items.push(req.body);
-    var data = JSON.stringify(items);
-    fs.writeFile('eneida.json', data);
-    return res.json({
-        eneida: items
-    });
-});
+    app.route('/')
+        .get(Slides.getIndex);
+    app.route('/api')
+        .get(Slides.getIndex);
 
-// router.put("/:userid", function(req, res) {
-//     for (let i = 0; i < items.length; i++) {
-//         if (items[i].id == req.params.userid) {
-//             items[i].text = req.body.text;
-//             break;
-//         }
-//     }
-//     var data = JSON.stringify(items);
-//     fs.writeFile('eneida.json', data);
-//     return res.json({
-//         eneida: items
-//     });
-// });
-
-// router.delete("/:userid", function(req, res) {
-//     for (let i = 0; i < items.length; i++) {
-//         if (items[i].id == req.params.userid) {
-//             items.splice(i, 1);
-//             break;
-//         }
-//     }
-//     var data = JSON.stringify(items);
-//     fs.writeFile('eneida.json', data);
-//     return res.json({
-//         eneida: items
-//     });
-// });
-
-// router.get("/:userid", function(req, res) {
-//     for (let i = 0; i < items.length; i++) {
-//         if (items[i].id === parseInt(req.params.userid)) {
-//             return res.json(items[i]);
-//         }
-//     }
-// });
-
-module.exports = router;
+    app.route('/slides')
+        .get(Slides.getMedication)
+        .post(Slides.addMedication);
+};
