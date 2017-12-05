@@ -1,13 +1,13 @@
 
 var mongoose = require('mongoose'),
-    Slide = require('../models/slides');
+    Images = require('../models/slides');
 
 exports.getIndex = (req, res) => {
     res.send('Please use /slides');
 };
 
-exports.getSlide = (req, res) => {
-    Slide.getSlide((err, data) => {
+exports.getImages = (req, res) => {
+    Images.getImages((err, data) => {
         if (err) {
             throw err;
         }
@@ -15,9 +15,9 @@ exports.getSlide = (req, res) => {
     });
 };
 
-exports.addSlide = (req, res) => {
+exports.addImages = (req, res) => {
     let newRow = req.body;
-    Slide.addSlide(newRow, (err, data) => {
+    Slide.addImages(newRow, (err, data) => {
         if (err) {
             throw err;
         }

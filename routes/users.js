@@ -1,5 +1,5 @@
 module.exports = function (app) {
-    var Slide = require('../controllers/controllers');
+    var Images = require('../controllers/controllers');
 
     app.use(function(req, res, next) {
         res.header("Access-Control-Allow-Origin", "*");
@@ -9,11 +9,11 @@ module.exports = function (app) {
     });
 
     app.route('/')
-        .get(Slide.getIndex);
+        .get(Images.getIndex);
     app.route('/api')
-        .get(Slide.getIndex);
+        .get(Images.getIndex);
 
-    app.route('/slides')
-        .get(Slide.getSlide)
-        .post(Slide.addSlide);
+    app.route('/images')
+        .get(Images.getImages)
+        .post(Images.addImages);
 };
