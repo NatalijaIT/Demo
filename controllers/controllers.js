@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
     Images = require('../models/slides');
 
 exports.getIndex = (req, res) => {
-    res.send('Please use /slides');
+    res.send('Please use /images');
 };
 
 exports.getImages = (req, res) => {
