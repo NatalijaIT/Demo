@@ -13,7 +13,7 @@ exports.getImage = (req, res) => {
     //     if (err) {
     //         throw err;
     //     }
-        res.send('getImage');
+        // res.send('getImage');
     //     res.json(data);
     });
 };
