@@ -7,6 +7,8 @@ var ImageSchema = mongoose.Schema({
 var Image = module.exports = mongoose.model('Image', ImageSchema);
 
 module.exports.getImage = (cb) => {
+    console.log('module.export c');
+    res.send('module.export s');
     Image.find(cb);
 };
 
