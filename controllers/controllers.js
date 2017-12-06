@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 
 exports.getIndex = (req, res) => {
     console.log('I in getIndex function');
-    res.send('Please use ????/images');
+    res.send('Please use /images');
 };
 
 exports.getImage = (req, res) => {
