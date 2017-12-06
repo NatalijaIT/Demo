@@ -4,7 +4,7 @@ var ImageSchema = mongoose.Schema({
     images: []
 });
 
-var Image =  mongoose.model('Image', ImageSchema);
+var Image =  mongoose.model('image', ImageSchema);
 
 Image.getImage = (cb) => {
     Image.find(cb);
