@@ -4,7 +4,7 @@ var ImageSchema = mongoose.Schema({
     images: any
 });
 
-var Images = mongoose.model('Images', ImageSchema);
+var Images = mongoose.model('Image', ImageSchema);
 
 Images.getImage = (cb) => {
     //console.log('module.export c');
