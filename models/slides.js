@@ -1,14 +1,14 @@
 var mongoose = require('mongoose');
 
 var ImageSchema = mongoose.Schema({
-    images: String
+    image: String
 });
 
-var Image =  mongoose.model('created', 
-{
-Number: Number,
-Place: String
-});
+var Image =  mongoose.model('image', 
+    {
+        image: String
+    }
+);
 
 Image.getImage = (cb) => {
     Image.find(cb);
