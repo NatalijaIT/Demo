@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var ImageSchema = mongoose.Schema({
-    images: any
+    image: string
 });
 
 var Images = mongoose.model('Image', ImageSchema);
