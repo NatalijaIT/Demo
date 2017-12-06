@@ -8,23 +8,21 @@ exports.getIndex = (req, res) => {
 };
 
 exports.getImage = (req, res) => {
-    //res.send('getImage');
     Images.getImage((err, data) => {
         if (err) {
             throw err;
         }
-        // res.send('getImage');
         res.json(data);
     });
 };
 
 exports.addImage = (req, res) => {
     res.send('addImage');
-    // let newRow = req.body;
-    // Slide.addImage(newRow, (err, data) => {
-    //     if (err) {
-    //         throw err;
-    //     }
-    //     res.json(data);
-    // });
+    let newRow = req.body;
+    Slide.addImage(newRow, (err, data) => {
+        if (err) {
+            throw err;
+        }
+        res.json(data);
+    });
 };
