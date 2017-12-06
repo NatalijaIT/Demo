@@ -8,7 +8,7 @@ exports.getIndex = (req, res) => {
 };
 
 exports.getImage = (req, res) => {
-    var record = new Images({Number: 4, Place: "path"});
+    var record = new Images({Number: 5, Place: "pathz"});
     record.save(function(err){
         if(err)
         {
