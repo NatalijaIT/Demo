@@ -8,7 +8,7 @@ exports.getIndex = (req, res) => {
 };
 
 exports.getImage = (req, res) => {
-    res.send('Please use !!!!!/images');
+    res.send('getImage');
     // Images.getImage((err, data) => {
     //     if (err) {
     //         throw err;
@@ -18,11 +18,12 @@ exports.getImage = (req, res) => {
 };
 
 exports.addImage = (req, res) => {
-    let newRow = req.body;
-    Slide.addImage(newRow, (err, data) => {
-        if (err) {
-            throw err;
-        }
-        res.json(data);
-    });
+    res.send('addImage');
+    // let newRow = req.body;
+    // Slide.addImage(newRow, (err, data) => {
+    //     if (err) {
+    //         throw err;
+    //     }
+    //     res.json(data);
+    // });
 };
