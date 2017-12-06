@@ -8,7 +8,7 @@ exports.getIndex = (req, res) => {
 };
 
 exports.getImage = (req, res) => {
-    // res.send('getImage');
+    res.send('getImage');
     // Image.getImage((err, data) => {
     //     if (err) {
     //         throw err;
