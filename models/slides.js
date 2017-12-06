@@ -1,14 +1,13 @@
 var mongoose = require('mongoose');
 
 var ImageSchema = mongoose.Schema({
-    image: String
+    images: []
 });
 
 var Image =  mongoose.model('Image', ImageSchema);
 
 Image.getImage = (cb) => {
-    res.send('sPlease use ????/images');
-    //Image.find(cb);
+    Image.find(cb);
 };
 
 Image.addImage = (row, cb) => {
