@@ -9,13 +9,13 @@ exports.getIndex = (req, res) => {
 
 exports.getImage = (req, res) => {
     res.send('getImage');
-    // Image.getImage((err, data) => {
+    Image.getImage((err, data) => {
     //     if (err) {
     //         throw err;
     //     }
-    //     res.send('getImage');
+        res.send('getImage');
     //     res.json(data);
-    // });
+    });
 };
 
 exports.addImage = (req, res) => {
