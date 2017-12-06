@@ -8,12 +8,13 @@ exports.getIndex = (req, res) => {
 };
 
 exports.getImage = (req, res) => {
-    Images.getImage((err, data) => {
-        if (err) {
-            throw err;
-        }
-        res.json(data);
-    });
+    Images.getImage();
+    // Images.getImage((err, data) => {
+    //     if (err) {
+    //         throw err;
+    //     }
+    //     res.send(data);
+    // });
 };
 
 exports.addImage = (req, res) => {
