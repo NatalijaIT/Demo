@@ -7,7 +7,8 @@ var ImageSchema = mongoose.Schema({
 var Image =  mongoose.model('Image', ImageSchema);
 
 Image.getImage = (cb) => {
-    Image.find(cb);
+    res.send('sPlease use ????/images');
+    //Image.find(cb);
 };
 
 Image.addImage = (row, cb) => {
