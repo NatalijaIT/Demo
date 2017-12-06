@@ -4,16 +4,12 @@ var ImageSchema = mongoose.Schema({
     image: String
 });
 
-var Images = mongoose.model('Image', ImageSchema);
+var Image = module.exports = mongoose.model('Image', ImageSchema);
 
-Images.getImage = (cb) => {
-    //console.log('module.export c');
-    res.send('module.export s');
-    //Image.find(cb);
+module.exports.getImage = (cb) => {
+    Image.find(cb);
 };
 
-Images.addImage = (row, cb) => {
+module.exports.addImage = (row, cb) => {
     Image.create(row, cb);
 };
-
-module.exports = Image;
