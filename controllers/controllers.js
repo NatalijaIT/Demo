@@ -1,6 +1,6 @@
 
 var mongoose = require('mongoose'),
-    Image = require('../models/slides');
+    Images = require('../models/slides');
 
 exports.getIndex = (req, res) => {
     console.log('I in getIndex function');
@@ -9,12 +9,12 @@ exports.getIndex = (req, res) => {
 
 exports.getImage = (req, res) => {
     res.send('getImage');
-    Image.getImage((err, data) => {
-    //     if (err) {
-    //         throw err;
-    //     }
+    Images.getImage((err, data) => {
+        if (err) {
+            throw err;
+        }
         // res.send('getImage');
-    //     res.json(data);
+        res.json(data);
     });
 };
 
