@@ -8,23 +8,23 @@ exports.getIndex = (req, res) => {
 };
 
 exports.getImage = (req, res) => {
-    var record = new Images({Number: 105, Place: "pathz"});
-    record.save(function(err){
-        if(err)
-        {
-            res.status(500).json({status: 'failure'});
-        }
-        else 
-        {
-            res.json({status: 'success'});
-        }
-    });
-    // Images.getImage((err, data) => {
-    //     if (err) {
-    //         throw err;
+    // var record = new Images({Number: 105, Place: "pathz"});
+    // record.save(function(err){
+    //     if(err)
+    //     {
+    //         res.status(500).json({status: 'failure'});
     //     }
-    //     res.json(data);
+    //     else 
+    //     {
+    //         res.json({status: 'success'});
+    //     }
     // });
+    Images.getImage((err, data) => {
+        if (err) {
+            throw err;
+        }
+        res.json(data);
+    });
 };
 
 exports.addImage = (req, res) => {
