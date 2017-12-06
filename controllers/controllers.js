@@ -9,12 +9,12 @@ exports.getIndex = (req, res) => {
 
 exports.getImage = (req, res) => {
     res.send('getImage');
-    // Images.getImage((err, data) => {
-    //     if (err) {
-    //         throw err;
-    //     }
-    //     res.json(data);
-    // });
+    Image.getImage((err, data) => {
+        if (err) {
+            throw err;
+        }
+        res.json(data);
+    });
 };
 
 exports.addImage = (req, res) => {
