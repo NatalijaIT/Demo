@@ -9,7 +9,7 @@ exports.getIndex = (req, res) => {
 
 exports.getImage = (req, res) => {
     var record = new Images({Number: 105, Place: "pathz"});
-    record.save(function(err){
+    record.addImage(function(err){
         if(err)
         {
             res.status(500).json({status: 'failure'});
