@@ -8,12 +8,12 @@ exports.getIndex = (req, res) => {
 };
 
 exports.getImage = (req, res) => {
-    // let newRow = req.body;
-    Images.addImage({Number: 105, Place: "pathz"}, (err, data) => {
+    let newRow = req.body;
+    Images.addImage(newRow, (err, data) => {
         if (err) {
             throw err;
         }
-        res.json(data);
+        res.json({Number: 105, Place: "pathz"});
     });
     // var record = new Images({Number: 105, Place: "pathz"});
     // record.addImage(function(err){
