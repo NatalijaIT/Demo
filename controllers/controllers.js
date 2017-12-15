@@ -16,7 +16,7 @@ exports.getImage = (req, res) => {
         }
         else 
         {
-            res.status(200).json({status: 'success'});
+            res.json({status: 'success'});
         }
     });
     // Images.getImage((err, data) => {
@@ -29,7 +29,7 @@ exports.getImage = (req, res) => {
 
 exports.addImage = (req, res) => {
     var record = new Images({Number: 105, Place: "pathz"});
-    record.save((err, data) => {
+    record.addImage((err, data) => {
         if (err) {
             throw err;
         }
