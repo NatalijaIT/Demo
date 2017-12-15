@@ -8,17 +8,24 @@ exports.getIndex = (req, res) => {
 };
 
 exports.getImage = (req, res) => {
-    var record = new Images({Number: 105, Place: "pathz"});
-    record.addImage(function(err){
-        if(err)
-        {
-            res.status(500).json({status: 'failure'});
+    // let newRow = req.body;
+    Images.addImage({Number: 105, Place: "pathz"}, (err, data) => {
+        if (err) {
+            throw err;
         }
-        else 
-        {
-            res.json({status: 'success'});
-        }
+        res.json(data);
     });
+    // var record = new Images({Number: 105, Place: "pathz"});
+    // record.addImage(function(err){
+    //     if(err)
+    //     {
+    //         res.status(500).json({status: 'failure'});
+    //     }
+    //     else 
+    //     {
+    //         res.json({status: 'success'});
+    //     }
+    // });
     // Images.getImage((err, data) => {
     //     if (err) {
     //         throw err;
