@@ -12,8 +12,8 @@ exports.getImage = (req, res) => {
             throw err;
         }
         res.json(data);
-    })
-}
+    });
+};
     // let newRow = req.body;
     // Images.addImage(newRow, (err, data) => {
     //     if (err) {
@@ -39,13 +39,13 @@ exports.getImage = (req, res) => {
     //     res.json(data);
     // });
 exports.addImage = (req, res) => {
-    let record = req.body;
-    Image.addImage(record, (err, data) => {
+    let newImage = req.body;
+    Image.addImage(newImage, (err, data) => {
         if (err) {
             throw err;
         }
         res.json(data);
-    })
+    });
     // let newRow = req.body;
     // Slide.addImage(newRow, (err, data) => {
     //     if (err) {
@@ -53,4 +53,4 @@ exports.addImage = (req, res) => {
     //     }
     //     res.json(data);
     // });
-}
+};

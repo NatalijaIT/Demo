@@ -4,7 +4,7 @@ const ImageSchema = mongoose.Schema({
     image: String
 });
 
-const Image =  mongoose.model('pictures', ImageSchema);
+const Image =  module.exports = mongoose.model('pictures', ImageSchema);
 
 module.exports.getImage = (cb) => {
     Image.find(cb);
