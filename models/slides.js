@@ -1,17 +1,15 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var ImageSchema = mongoose.Schema({
+const ImageSchema = mongoose.Schema({
     image: String
 });
 
-var Image =  mongoose.model('pictures', ImageSchema);
+const Image =  mongoose.model('pictures', ImageSchema);
 
-Image.getImage = (cb) => {
+module.exports.getImage = (cb) => {
     Image.find(cb);
 };
 
-Image.addImage = (row, cb) => {
+module.exports.addImage = (row, cb) => {
     Image.create(row, cb);
 };
-
-module.exports = Image;

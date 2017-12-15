@@ -1,6 +1,5 @@
-
 var mongoose = require('mongoose'),
-    Images = require('../models/slides');
+    Image = require('../models/slides');
 
 exports.getIndex = (req, res) => {
     console.log('I in getIndex function');
@@ -8,17 +7,13 @@ exports.getIndex = (req, res) => {
 };
 
 exports.getImage = (req, res) => {
-    var record = new Image({Number: 105, Place: "pathz"});
-    record.save(function(err){
-        if(err)
-        {
-            res.status(500).json({status: 'failure'});
+    Medication.getImage((err, data) => {
+        if (err) {
+            throw err;
         }
-        else 
-        {
-            res.json({status: 'success'});
-        }
-    });
+        res.json(data);
+    })
+}
     // let newRow = req.body;
     // Images.addImage(newRow, (err, data) => {
     //     if (err) {
@@ -43,16 +38,14 @@ exports.getImage = (req, res) => {
     //     }
     //     res.json(data);
     // });
-};
-
 exports.addImage = (req, res) => {
-    var record = new Images({Number: 105, Place: "pathz"});
-    record.addImage((err, data) => {
+    let record = req.body;
+    Image.addImage(record, (err, data) => {
         if (err) {
             throw err;
         }
         res.json(data);
-    });
+    })
     // let newRow = req.body;
     // Slide.addImage(newRow, (err, data) => {
     //     if (err) {
@@ -60,4 +53,4 @@ exports.addImage = (req, res) => {
     //     }
     //     res.json(data);
     // });
-};
+}
