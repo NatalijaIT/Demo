@@ -9,7 +9,8 @@ exports.getIndex = (req, res) => {
 
 exports.getImage = (req, res) => {
     let newRow = req.body;
-    Images.addImage(newRow, (err, data) => {
+    var record = new Images({Number: 105, Place: "pathz"});
+    record.addImage(newRow, (err, data) => {
         if (err) {
             throw err;
         }
