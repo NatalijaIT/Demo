@@ -29,11 +29,11 @@ exports.getImage = (req, res) => {
 
 exports.addImage = (req, res) => {
     res.send('addImage');
-    let newRow = req.body;
-    Slide.addImage(newRow, (err, data) => {
-        if (err) {
-            throw err;
-        }
-        res.json(data);
-    });
+    // let newRow = req.body;
+    // Slide.addImage(newRow, (err, data) => {
+    //     if (err) {
+    //         throw err;
+    //     }
+    //     res.json(data);
+    // });
 };

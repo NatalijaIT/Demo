@@ -14,6 +14,6 @@ module.exports = function (app) {
         .get(Image.getIndex);
 
     app.route('/images')
-        .get(Image.getImage)
-        .post(Image.addImage);
+        .get(Image.getImage);
+        //.post(Image.addImage);
 };
