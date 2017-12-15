@@ -2,12 +2,11 @@ var mongoose = require('mongoose'),
     Image = require('../models/slides');
 
 exports.getIndex = (req, res) => {
-    console.log('I in getIndex function');
     res.send('Please use /images');
 };
 
 exports.getImage = (req, res) => {
-    Medication.getImage((err, data) => {
+    Image.getImage((err, data) => {
         if (err) {
             throw err;
         }
