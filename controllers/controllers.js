@@ -8,14 +8,24 @@ exports.getIndex = (req, res) => {
 };
 
 exports.getImage = (req, res) => {
-    let newRow = req.body;
     var record = new Images({Number: 105, Place: "pathz"});
-    record.addImage(newRow, (err, data) => {
-        if (err) {
-            throw err;
+    record.save(function(err){
+        if(err)
+        {
+            res.status(500).json({status: 'failure'});
         }
-        res.json({Number: 105, Place: "pathz"});
+        else 
+        {
+            res.json({status: 'success'});
+        }
     });
+    // let newRow = req.body;
+    // Images.addImage(newRow, (err, data) => {
+    //     if (err) {
+    //         throw err;
+    //     }
+    //     res.json({"image" : "//unsplash.it/601/300"});
+    // });
     // var record = new Images({Number: 105, Place: "pathz"});
     // record.addImage(function(err){
     //     if(err)
