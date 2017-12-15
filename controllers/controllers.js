@@ -8,27 +8,33 @@ exports.getIndex = (req, res) => {
 };
 
 exports.getImage = (req, res) => {
-    // var record = new Images({Number: 105, Place: "pathz"});
-    // record.save(function(err){
-    //     if(err)
-    //     {
-    //         res.status(500).json({status: 'failure'});
+    var record = new Images({Number: 105, Place: "pathz"});
+    record.save(function(err){
+        if(err)
+        {
+            res.status(500).json({status: 'failure'});
+        }
+        else 
+        {
+            res.status(200).json({status: 'success'});
+        }
+    });
+    // Images.getImage((err, data) => {
+    //     if (err) {
+    //         throw err;
     //     }
-    //     else 
-    //     {
-    //         res.json({status: 'success'});
-    //     }
+    //     res.json(data);
     // });
-    Images.getImage((err, data) => {
+};
+
+exports.addImage = (req, res) => {
+    var record = new Images({Number: 105, Place: "pathz"});
+    record.save((err, data) => {
         if (err) {
             throw err;
         }
         res.json(data);
     });
-};
-
-exports.addImage = (req, res) => {
-    res.send('addImage');
     // let newRow = req.body;
     // Slide.addImage(newRow, (err, data) => {
     //     if (err) {
